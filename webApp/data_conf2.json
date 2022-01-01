@@ -1,0 +1,1 @@
+{"cols": ["City", "PM2.5", "PM10", "NH3", "CO", "SO2", "O3", "Nitrites", "month", "Day"], "pm2.5": {"min": 1.72, "max": 868.66}, "PM10": {"min": 3.97, "max": 917.08}, "NH3": {"min": 0.06, "max": 194.46}, "CO": {"min": 0.0, "max": 175.81}, "SO2": {"min": 0.52, "max": 186.08}, "O3": {"min": 0.01, "max": 162.43}, "Nitrites": {"min": 0.08, "max": 577.67}, "day": [
