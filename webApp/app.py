@@ -20,11 +20,11 @@ class AQI:
     def __init__(self) -> None:
         self.view = "default"
         # loadding data configs
-        with open('data_conf2.pkl', 'rb') as fp:
+        with open('webApp/data_conf2.pkl', 'rb') as fp:
             self.config = pickle.load(fp) 
         self.scaler = MinMaxScaler(feature_range=(0,1))
-        self.model = pickle.load(open('model.pkl', 'rb'))
-        self.data_vis = pd.read_csv('plotting_data.csv')
+        self.model = pickle.load(open('webApp/model.pkl', 'rb'))
+        self.data_vis = pd.read_csv('webApp/plotting_data.csv')
         
     def construct_sidebar(self):
         cols = [col for col in self.config.get('cols')]
