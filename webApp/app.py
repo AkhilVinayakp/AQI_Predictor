@@ -88,17 +88,17 @@ class AQI:
     @staticmethod
     def get_AQI_bucket(x):
         if x <= 50:
-            return "Good"
+            return "Good" , "Minimal Impact"
         elif x <= 100:
-            return "Satisfactory"
+            return "Satisfactory", "May cause minor breathing discomfort to sensitive people."
         elif x <= 200:
-            return "Moderate"
+            return "Moderate", "May cause breathing discomfort to people with lung disease such as asthma, and discomfort to people with heart disease, children and older adults. "
         elif x <= 300:
-            return "Poor"
+            return "Poor", "May cause breathing discomfort to people on prolonged exposure, and discomfort to people with heart disease "
         elif x <= 400:
-            return "Very Poor"
+            return "Very Poor", "May cause respiratory illness to the people on prolonged exposure. Effect may be more pronounced in people with lung and heart diseases. "
         elif x > 400:
-            return "Severe"
+            return "Severe", "May cause respiratory impact even on healthy people, and serious health impacts on people with lung/heart disease. The health impacts may be experienced even during light physical activity."
         else:
             return 0
     def viz_one(self):
@@ -123,10 +123,11 @@ class AQI:
         outcome = outcome.item()
         outcome = round(outcome)
 
-        aqi_stats = AQI.get_AQI_bucket(outcome)
+        aqi_stats, impact = AQI.get_AQI_bucket(outcome)
         slt.markdown(
             f'<h5><center> Predicted AQI: {outcome}</center> \
-               <h6> <center> Status {aqi_stats} </center>',
+               <h6> <center> Status {aqi_stats} </center></h6> \
+                   <p><b>HELTH IMPACT<b> {impact}</p>',
                unsafe_allow_html= True
         )
         selected = slt.radio(label = 'select an Option', options = ['Places & AQI','City wise AQI','AQI India', 'seasonality and trend', "Top 10 Polluted Cities"])
