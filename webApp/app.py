@@ -127,7 +127,7 @@ class AQI:
         slt.markdown(
             f'<h5><center> Predicted AQI: {outcome}</center> \
                <h6> <center> Status {aqi_stats} </center></h6> \
-                   <p><b>HELTH IMPACT<b> {impact}</p>',
+                   <p><b> <i>HEALTH IMPACT</i>  :: <b> {impact}</p>',
                unsafe_allow_html= True
         )
         selected = slt.radio(label = 'select an Option', options = ['Places & AQI','City wise AQI','AQI India', 'seasonality and trend', "Top 10 Polluted Cities"])
